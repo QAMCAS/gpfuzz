@@ -1,2 +1,1 @@
-# gpfuzz
-GPFUZZ: Grammar-based Performance Fuzzer
+# GPFUZZ: Grammar-based Performance Fuzzer
