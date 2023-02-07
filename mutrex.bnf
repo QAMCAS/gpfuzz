@@ -1,0 +1,14 @@
+<regexp>       ::= <unionexp>
+<unionexp>     ::= <interexp> '|' <unionexp> | <interexp>
+<interexp>     ::= <concatexp> '&' <interexp> | <concatexp>
+<concatexp>    ::= <repeatexp> <concatexp> | <repeatexp>
+<repeatexp>    ::= <repeatexp> '?' | <repeatexp> '*' | <repeatexp> '+' | <repeatexp> '{' <digit> '}' | <repeatexp> '{' <digit> ',}' | <repeatexp> '{' <ldigit> ',' <hdigit> '}' | <complexp>
+<complexp>     ::= '~' <complexp> | <charclassexp>
+<charclassexp> ::= '[' <charclasses> ']' | '[^' <charclasses> ']' | <simpleexp>
+<charclasses>  ::= <charclass> <charclasses> | <charclass>
+<charclass>    ::= <charexp> '-' <charexp> | <charexp>
+<simpleexp>    ::= <charexp> | '.' | '#' | '@' | '"aB14"' | '()' | '(' <unionexp> ')'
+<charexp>      ::= 'a' | 'A' | 'b' | 'B' 
+<digit>        ::= <ldigit> | <hdigit>
+<ldigit>       ::= '1' | '2'
+<hdigit>       ::= '3' | '4'
