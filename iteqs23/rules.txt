@@ -1,0 +1,70 @@
+<hdigit>
+# Inputs = 893
+# Bottlenecks = 46
+P(bottleneck | <hdigit>) = 0.051511758118701
+
+<ldigit>
+# Inputs = 900
+# Bottlenecks = 46
+P(bottleneck | <ldigit>) = 0.0511111111111111
+
+<simpleexp>
+# Inputs = 672
+# Bottlenecks = 37
+P(bottleneck | <simpleexp>) = 0.0550595238095238
+
+<charclass>
+# Inputs = 895
+# Bottlenecks = 45
+P(bottleneck | <charclass>) = 0.0502793296089385
+
+<digit>
+# Inputs = 897
+# Bottlenecks = 46
+P(bottleneck | <digit>) = 0.0512820512820513
+
+<complexp>
+# Inputs = 1000
+# Bottlenecks = 46
+P(bottleneck | <complexp>) = 0.046
+
+<regexp>
+# Inputs = 1000
+# Bottlenecks = 46
+P(bottleneck | <regexp>) = 0.046
+
+<repeatexp>
+# Inputs = 1000
+# Bottlenecks = 46
+P(bottleneck | <repeatexp>) = 0.046
+
+<charclassexp>
+# Inputs = 1000
+# Bottlenecks = 46
+P(bottleneck | <charclassexp>) = 0.046
+
+<interexp>
+# Inputs = 1000
+# Bottlenecks = 46
+P(bottleneck | <interexp>) = 0.046
+
+<charexp>
+# Inputs = 915
+# Bottlenecks = 46
+P(bottleneck | <charexp>) = 0.0502732240437158
+
+<charclasses>
+# Inputs = 895
+# Bottlenecks = 45
+P(bottleneck | <charclasses>) = 0.0502793296089385
+
+<unionexp>
+# Inputs = 1000
+# Bottlenecks = 46
+P(bottleneck | <unionexp>) = 0.046
+
+<concatexp>
+# Inputs = 1000
+# Bottlenecks = 46
+P(bottleneck | <concatexp>) = 0.046
+

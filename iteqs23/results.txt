@@ -1,0 +1,7 @@
+     TERM COVERAGE = %100
+          # Inputs = 1000
+Mean Response Time = 95.3269550000001
+          Variance = 25180.595809553
+Standard Deviation = 158.683949438981
+Min. Bottleneck RT = 412.694853877961
+     # Bottlenecks = 46
