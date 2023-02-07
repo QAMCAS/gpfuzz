@@ -1,5 +1,23 @@
 # GPFUZZ: Grammar-based Performance Fuzzer
 
+### How to Use
+
+```
+Usage: perl GPFuzz.pl <N> <grammar-file> <root-rule> "<parser>" "<fail-msg>"
+```
+
+GPFUZZ generates `N` distinct inputs, valid according to a `grammar-file`. Then, 
+it executes these inputs on the `parser` and produces a bunch of txt files containing
+performance statistics.
+
+### Reproducing ITEQS23 Experiments
+
+Please download [mutrex.jar][1] first!
+
+```
+perl GPFuzz.pl 1000 iteqs23/mutrex.bnf regexp "java -jar mutrex.jar" "Exception"
+```
+
 ### Copyright Notice
 
 GPFUZZ: Grammar-based Performance Fuzzer
@@ -37,3 +55,5 @@ along with gfuzzer. If not, see <https://www.gnu.org/licenses/>.
 
 * **mail:** ykoerogl@ist.tugraz.at
 * **address:** Inffeldgasse 16b/II, 8010 Graz/AUSTRIA
+
+[1]: https://github.com/fmselab/mutrex/raw/master/mutrex.cli/mutrex.jar
