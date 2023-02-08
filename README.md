@@ -15,7 +15,7 @@ performance statistics.
 Please download [mutrex.jar][1] first!
 
 ```
-perl GPFuzz.pl 1000 iteqs23/mutrex.bnf regexp "java -jar mutrex.jar" "Exception"
+perl GPFuzz.pl 1000 iteqs23/mutrex.bnf regexp "timeout 60 java -jar mutrex.jar" "Exception"
 ```
 
 ### Copyright Notice
