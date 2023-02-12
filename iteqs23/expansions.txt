@@ -1,246 +1,252 @@
-<hdigit> ::=  '4'
-# Inputs = 811
-# Bottlenecks = 46
-P(bottleneck | <hdigit>,  '4') = 0.0567200986436498
-D(bottleneck | <hdigit>,  '4') = 0.00520834052494881
-
-<hdigit> ::=  '3' 
-# Inputs = 808
-# Bottlenecks = 46
-P(bottleneck | <hdigit>,  '3' ) = 0.0569306930693069
-D(bottleneck | <hdigit>,  '3' ) = 0.00541893495060593
-
-<ldigit> ::=  '2'
-# Inputs = 824
-# Bottlenecks = 46
-P(bottleneck | <ldigit>,  '2') = 0.0558252427184466
-D(bottleneck | <ldigit>,  '2') = 0.00471413160733549
-
-<ldigit> ::=  '1' 
-# Inputs = 820
-# Bottlenecks = 44
-P(bottleneck | <ldigit>,  '1' ) = 0.0536585365853659
-D(bottleneck | <ldigit>,  '1' ) = 0.00254742547425474
-
-<simpleexp> ::=  '#' 
-# Inputs = 194
-# Bottlenecks = 8
-P(bottleneck | <simpleexp>,  '#' ) = 0.0412371134020619
-D(bottleneck | <simpleexp>,  '#' ) = -0.013822410407462
-
-<simpleexp> ::=  '()' 
-# Inputs = 176
-# Bottlenecks = 12
-P(bottleneck | <simpleexp>,  '()' ) = 0.0681818181818182
-D(bottleneck | <simpleexp>,  '()' ) = 0.0131222943722944
-
-<simpleexp> ::=  '(' <unionexp> ')'
-# Inputs = 158
-# Bottlenecks = 13
-P(bottleneck | <simpleexp>,  '(' <unionexp> ')') = 0.0822784810126582
-D(bottleneck | <simpleexp>,  '(' <unionexp> ')') = 0.0272189572031344
-
-<simpleexp> ::=  '"aB14"' 
-# Inputs = 200
-# Bottlenecks = 10
-P(bottleneck | <simpleexp>,  '"aB14"' ) = 0.05
-D(bottleneck | <simpleexp>,  '"aB14"' ) = -0.00505952380952381
-
-<simpleexp> ::=  '.' 
-# Inputs = 181
-# Bottlenecks = 11
-P(bottleneck | <simpleexp>,  '.' ) = 0.0607734806629834
-D(bottleneck | <simpleexp>,  '.' ) = 0.00571395685345961
-
-<simpleexp> ::=  '@' 
-# Inputs = 206
-# Bottlenecks = 15
-P(bottleneck | <simpleexp>,  '@' ) = 0.0728155339805825
-D(bottleneck | <simpleexp>,  '@' ) = 0.0177560101710587
-
-<simpleexp> ::=  <charexp> 
-# Inputs = 171
-# Bottlenecks = 10
-P(bottleneck | <simpleexp>,  <charexp> ) = 0.0584795321637427
-D(bottleneck | <simpleexp>,  <charexp> ) = 0.00342000835421888
-
-<charclass> ::=  <charexp>
-# Inputs = 755
-# Bottlenecks = 44
-P(bottleneck | <charclass>,  <charexp>) = 0.0582781456953642
-D(bottleneck | <charclass>,  <charexp>) = 0.00799881608642569
-
-<charclass> ::=  <charexp> '-' <charexp> 
-# Inputs = 788
-# Bottlenecks = 39
-P(bottleneck | <charclass>,  <charexp> '-' <charexp> ) = 0.049492385786802
-D(bottleneck | <charclass>,  <charexp> '-' <charexp> ) = -0.000786943822136517
-
 <digit> ::=  <hdigit>
-# Inputs = 793
-# Bottlenecks = 45
-P(bottleneck | <digit>,  <hdigit>) = 0.0567465321563682
-D(bottleneck | <digit>,  <hdigit>) = 0.00546448087431694
+# Inputs = 893
+# Bottlenecks = 50
+P(bottleneck | <digit>,  <hdigit>) = 0.0559910414333707
+D(bottleneck | <digit>,  <hdigit>) = 0.00296877208024235
 
 <digit> ::=  <ldigit> 
-# Inputs = 829
-# Bottlenecks = 44
-P(bottleneck | <digit>,  <ldigit> ) = 0.0530759951749095
-D(bottleneck | <digit>,  <ldigit> ) = 0.00179394389285825
+# Inputs = 892
+# Bottlenecks = 49
+P(bottleneck | <digit>,  <ldigit> ) = 0.054932735426009
+D(bottleneck | <digit>,  <ldigit> ) = 0.00191046607288065
 
-<complexp> ::=  <charclassexp>
+<unionexp> ::=  <interexp>
 # Inputs = 1000
-# Bottlenecks = 46
-P(bottleneck | <complexp>,  <charclassexp>) = 0.046
-D(bottleneck | <complexp>,  <charclassexp>) = 0
+# Bottlenecks = 50
+P(bottleneck | <unionexp>,  <interexp>) = 0.05
+D(bottleneck | <unionexp>,  <interexp>) = 0
 
-<complexp> ::=  '~' <complexp> 
-# Inputs = 793
-# Bottlenecks = 41
-P(bottleneck | <complexp>,  '~' <complexp> ) = 0.051702395964691
-D(bottleneck | <complexp>,  '~' <complexp> ) = 0.00570239596469105
-
-<regexp> ::=  <unionexp>
-# Inputs = 1000
-# Bottlenecks = 46
-P(bottleneck | <regexp>,  <unionexp>) = 0.046
-D(bottleneck | <regexp>,  <unionexp>) = 0
-
-<repeatexp> ::=  <repeatexp> '{' <digit> '}' 
-# Inputs = 816
-# Bottlenecks = 46
-P(bottleneck | <repeatexp>,  <repeatexp> '{' <digit> '}' ) = 0.0563725490196078
-D(bottleneck | <repeatexp>,  <repeatexp> '{' <digit> '}' ) = 0.0103725490196078
-
-<repeatexp> ::=  <repeatexp> '{' <ldigit> ',' <hdigit> '}' 
-# Inputs = 820
-# Bottlenecks = 46
-P(bottleneck | <repeatexp>,  <repeatexp> '{' <ldigit> ',' <hdigit> '}' ) = 0.0560975609756098
-D(bottleneck | <repeatexp>,  <repeatexp> '{' <ldigit> ',' <hdigit> '}' ) = 0.0100975609756098
-
-<repeatexp> ::=  <repeatexp> '?' 
-# Inputs = 808
-# Bottlenecks = 45
-P(bottleneck | <repeatexp>,  <repeatexp> '?' ) = 0.0556930693069307
-D(bottleneck | <repeatexp>,  <repeatexp> '?' ) = 0.00969306930693069
-
-<repeatexp> ::=  <repeatexp> '*' 
-# Inputs = 826
-# Bottlenecks = 45
-P(bottleneck | <repeatexp>,  <repeatexp> '*' ) = 0.0544794188861985
-D(bottleneck | <repeatexp>,  <repeatexp> '*' ) = 0.00847941888619855
-
-<repeatexp> ::=  <repeatexp> '+' 
-# Inputs = 806
-# Bottlenecks = 45
-P(bottleneck | <repeatexp>,  <repeatexp> '+' ) = 0.0558312655086849
-D(bottleneck | <repeatexp>,  <repeatexp> '+' ) = 0.00983126550868486
-
-<repeatexp> ::=  <repeatexp> '{' <digit> ',}' 
-# Inputs = 811
-# Bottlenecks = 44
-P(bottleneck | <repeatexp>,  <repeatexp> '{' <digit> ',}' ) = 0.0542540073982737
-D(bottleneck | <repeatexp>,  <repeatexp> '{' <digit> ',}' ) = 0.00825400739827373
-
-<repeatexp> ::=  <complexp>
-# Inputs = 1000
-# Bottlenecks = 46
-P(bottleneck | <repeatexp>,  <complexp>) = 0.046
-D(bottleneck | <repeatexp>,  <complexp>) = 0
-
-<charclassexp> ::=  '[^' <charclasses> ']' 
-# Inputs = 680
-# Bottlenecks = 40
-P(bottleneck | <charclassexp>,  '[^' <charclasses> ']' ) = 0.0588235294117647
-D(bottleneck | <charclassexp>,  '[^' <charclasses> ']' ) = 0.0128235294117647
-
-<charclassexp> ::=  '[' <charclasses> ']' 
-# Inputs = 692
+<unionexp> ::=  <interexp> '|' <unionexp> 
+# Inputs = 556
 # Bottlenecks = 38
-P(bottleneck | <charclassexp>,  '[' <charclasses> ']' ) = 0.0549132947976879
-D(bottleneck | <charclassexp>,  '[' <charclasses> ']' ) = 0.00891329479768786
-
-<charclassexp> ::=  <simpleexp>
-# Inputs = 672
-# Bottlenecks = 37
-P(bottleneck | <charclassexp>,  <simpleexp>) = 0.0550595238095238
-D(bottleneck | <charclassexp>,  <simpleexp>) = 0.00905952380952381
-
-<interexp> ::=  <concatexp> '&' <interexp> 
-# Inputs = 503
-# Bottlenecks = 32
-P(bottleneck | <interexp>,  <concatexp> '&' <interexp> ) = 0.0636182902584493
-D(bottleneck | <interexp>,  <concatexp> '&' <interexp> ) = 0.0176182902584493
+P(bottleneck | <unionexp>,  <interexp> '|' <unionexp> ) = 0.0683453237410072
+D(bottleneck | <unionexp>,  <interexp> '|' <unionexp> ) = 0.0183453237410072
 
 <interexp> ::=  <concatexp>
 # Inputs = 1000
-# Bottlenecks = 46
-P(bottleneck | <interexp>,  <concatexp>) = 0.046
+# Bottlenecks = 50
+P(bottleneck | <interexp>,  <concatexp>) = 0.05
 D(bottleneck | <interexp>,  <concatexp>) = 0
 
-<charexp> ::=  'b' 
-# Inputs = 693
-# Bottlenecks = 40
-P(bottleneck | <charexp>,  'b' ) = 0.0577200577200577
-D(bottleneck | <charexp>,  'b' ) = 0.00744683367634187
-
-<charexp> ::=  'B' 
-# Inputs = 703
-# Bottlenecks = 40
-P(bottleneck | <charexp>,  'B' ) = 0.0568990042674253
-D(bottleneck | <charexp>,  'B' ) = 0.00662578022370947
-
-<charexp> ::=  'A' 
+<interexp> ::=  <concatexp> '&' <interexp> 
 # Inputs = 684
-# Bottlenecks = 37
-P(bottleneck | <charexp>,  'A' ) = 0.054093567251462
-D(bottleneck | <charexp>,  'A' ) = 0.00382034320774614
+# Bottlenecks = 44
+P(bottleneck | <interexp>,  <concatexp> '&' <interexp> ) = 0.064327485380117
+D(bottleneck | <interexp>,  <concatexp> '&' <interexp> ) = 0.014327485380117
 
-<charexp> ::=  'a' 
-# Inputs = 694
-# Bottlenecks = 37
-P(bottleneck | <charexp>,  'a' ) = 0.053314121037464
-D(bottleneck | <charexp>,  'a' ) = 0.00304089699374813
+<simpleexp> ::=  '#' 
+# Inputs = 357
+# Bottlenecks = 27
+P(bottleneck | <simpleexp>,  '#' ) = 0.0756302521008403
+D(bottleneck | <simpleexp>,  '#' ) = 0.0158338144418073
 
-<charclasses> ::=  <charclass>
-# Inputs = 895
-# Bottlenecks = 45
-P(bottleneck | <charclasses>,  <charclass>) = 0.0502793296089385
-D(bottleneck | <charclasses>,  <charclass>) = 0
-
-<charclasses> ::=  <charclass> <charclasses> 
-# Inputs = 682
-# Bottlenecks = 39
-P(bottleneck | <charclasses>,  <charclass> <charclasses> ) = 0.0571847507331378
-D(bottleneck | <charclasses>,  <charclass> <charclasses> ) = 0.00690542112419928
-
-<unionexp> ::= ' <unionexp> 
-# Inputs = 372
-# Bottlenecks = 23
-P(bottleneck | <unionexp>, ' <unionexp> ) = 0.0618279569892473
-D(bottleneck | <unionexp>, ' <unionexp> ) = 0.0158279569892473
-
-<unionexp> ::=  <interexp>
-# Inputs = 527
-# Bottlenecks = 29
-P(bottleneck | <unionexp>,  <interexp>) = 0.0550284629981025
-D(bottleneck | <unionexp>,  <interexp>) = 0.00902846299810247
-
-<unionexp> ::=  <interexp> '
-# Inputs = 566
+<simpleexp> ::=  '@' 
+# Inputs = 349
 # Bottlenecks = 28
-P(bottleneck | <unionexp>,  <interexp> ') = 0.049469964664311
-D(bottleneck | <unionexp>,  <interexp> ') = 0.00346996466431095
+P(bottleneck | <simpleexp>,  '@' ) = 0.0802292263610315
+D(bottleneck | <simpleexp>,  '@' ) = 0.0204327887019984
 
-<concatexp> ::=  <repeatexp> <concatexp> 
-# Inputs = 680
-# Bottlenecks = 42
-P(bottleneck | <concatexp>,  <repeatexp> <concatexp> ) = 0.0617647058823529
-D(bottleneck | <concatexp>,  <repeatexp> <concatexp> ) = 0.0157647058823529
+<simpleexp> ::=  '"aB14"' 
+# Inputs = 347
+# Bottlenecks = 27
+P(bottleneck | <simpleexp>,  '"aB14"' ) = 0.0778097982708934
+D(bottleneck | <simpleexp>,  '"aB14"' ) = 0.0180133606118603
+
+<simpleexp> ::=  <charexp> 
+# Inputs = 342
+# Bottlenecks = 21
+P(bottleneck | <simpleexp>,  <charexp> ) = 0.0614035087719298
+D(bottleneck | <simpleexp>,  <charexp> ) = 0.00160707111289674
+
+<simpleexp> ::=  '.' 
+# Inputs = 354
+# Bottlenecks = 26
+P(bottleneck | <simpleexp>,  '.' ) = 0.0734463276836158
+D(bottleneck | <simpleexp>,  '.' ) = 0.0136498900245827
+
+<simpleexp> ::=  '(' <unionexp> ')'
+# Inputs = 280
+# Bottlenecks = 21
+P(bottleneck | <simpleexp>,  '(' <unionexp> ')') = 0.075
+D(bottleneck | <simpleexp>,  '(' <unionexp> ')') = 0.0152035623409669
+
+<simpleexp> ::=  '()' 
+# Inputs = 357
+# Bottlenecks = 28
+P(bottleneck | <simpleexp>,  '()' ) = 0.0784313725490196
+D(bottleneck | <simpleexp>,  '()' ) = 0.0186349348899865
+
+<repeatexp> ::=  <repeatexp> '*' 
+# Inputs = 877
+# Bottlenecks = 47
+P(bottleneck | <repeatexp>,  <repeatexp> '*' ) = 0.0535917901938426
+D(bottleneck | <repeatexp>,  <repeatexp> '*' ) = 0.00359179019384264
+
+<repeatexp> ::=  <repeatexp> '+' 
+# Inputs = 899
+# Bottlenecks = 49
+P(bottleneck | <repeatexp>,  <repeatexp> '+' ) = 0.0545050055617353
+D(bottleneck | <repeatexp>,  <repeatexp> '+' ) = 0.00450500556173526
+
+<repeatexp> ::=  <complexp>
+# Inputs = 1000
+# Bottlenecks = 50
+P(bottleneck | <repeatexp>,  <complexp>) = 0.05
+D(bottleneck | <repeatexp>,  <complexp>) = 0
+
+<repeatexp> ::=  <repeatexp> '{' <digit> '}' 
+# Inputs = 901
+# Bottlenecks = 50
+P(bottleneck | <repeatexp>,  <repeatexp> '{' <digit> '}' ) = 0.0554938956714761
+D(bottleneck | <repeatexp>,  <repeatexp> '{' <digit> '}' ) = 0.00549389567147614
+
+<repeatexp> ::=  <repeatexp> '{' <ldigit> ',' <hdigit> '}' 
+# Inputs = 890
+# Bottlenecks = 50
+P(bottleneck | <repeatexp>,  <repeatexp> '{' <ldigit> ',' <hdigit> '}' ) = 0.0561797752808989
+D(bottleneck | <repeatexp>,  <repeatexp> '{' <ldigit> ',' <hdigit> '}' ) = 0.00617977528089887
+
+<repeatexp> ::=  <repeatexp> '?' 
+# Inputs = 896
+# Bottlenecks = 49
+P(bottleneck | <repeatexp>,  <repeatexp> '?' ) = 0.0546875
+D(bottleneck | <repeatexp>,  <repeatexp> '?' ) = 0.0046875
+
+<repeatexp> ::=  <repeatexp> '{' <digit> ',}' 
+# Inputs = 892
+# Bottlenecks = 49
+P(bottleneck | <repeatexp>,  <repeatexp> '{' <digit> ',}' ) = 0.054932735426009
+D(bottleneck | <repeatexp>,  <repeatexp> '{' <digit> ',}' ) = 0.00493273542600896
+
+<hdigit> ::=  '3' 
+# Inputs = 890
+# Bottlenecks = 50
+P(bottleneck | <hdigit>,  '3' ) = 0.0561797752808989
+D(bottleneck | <hdigit>,  '3' ) = 0.00315750592777056
+
+<hdigit> ::=  '4'
+# Inputs = 897
+# Bottlenecks = 50
+P(bottleneck | <hdigit>,  '4') = 0.0557413600891862
+D(bottleneck | <hdigit>,  '4') = 0.00271909073605786
 
 <concatexp> ::=  <repeatexp>
 # Inputs = 1000
-# Bottlenecks = 46
-P(bottleneck | <concatexp>,  <repeatexp>) = 0.046
+# Bottlenecks = 50
+P(bottleneck | <concatexp>,  <repeatexp>) = 0.05
 D(bottleneck | <concatexp>,  <repeatexp>) = 0
+
+<concatexp> ::=  <repeatexp> <concatexp> 
+# Inputs = 807
+# Bottlenecks = 44
+P(bottleneck | <concatexp>,  <repeatexp> <concatexp> ) = 0.0545229244114002
+D(bottleneck | <concatexp>,  <repeatexp> <concatexp> ) = 0.00452292441140024
+
+<charclass> ::=  <lcharexp> '-' <hcharexp> 
+# Inputs = 877
+# Bottlenecks = 46
+P(bottleneck | <charclass>,  <lcharexp> '-' <hcharexp> ) = 0.0524515393386545
+D(bottleneck | <charclass>,  <lcharexp> '-' <hcharexp> ) = 0.00229479952674228
+
+<charclass> ::=  <charexp>
+# Inputs = 891
+# Bottlenecks = 48
+P(bottleneck | <charclass>,  <charexp>) = 0.0538720538720539
+D(bottleneck | <charclass>,  <charexp>) = 0.00371531406014165
+
+<lcharexp> ::=  'A' 
+# Inputs = 846
+# Bottlenecks = 46
+P(bottleneck | <lcharexp>,  'A' ) = 0.0543735224586288
+D(bottleneck | <lcharexp>,  'A' ) = 0.0039983884822087
+
+<lcharexp> ::=  'a' 
+# Inputs = 851
+# Bottlenecks = 46
+P(bottleneck | <lcharexp>,  'a' ) = 0.0540540540540541
+D(bottleneck | <lcharexp>,  'a' ) = 0.00367892007763391
+
+<charclasses> ::=  <charclass> <charclasses> 
+# Inputs = 834
+# Bottlenecks = 46
+P(bottleneck | <charclasses>,  <charclass> <charclasses> ) = 0.0551558752997602
+D(bottleneck | <charclasses>,  <charclass> <charclasses> ) = 0.00499913548784797
+
+<charclasses> ::=  <charclass>
+# Inputs = 957
+# Bottlenecks = 48
+P(bottleneck | <charclasses>,  <charclass>) = 0.0501567398119122
+D(bottleneck | <charclasses>,  <charclass>) = 0
+
+<hcharexp> ::=  'b' 
+# Inputs = 840
+# Bottlenecks = 46
+P(bottleneck | <hcharexp>,  'b' ) = 0.0547619047619048
+D(bottleneck | <hcharexp>,  'b' ) = 0.00444070561843581
+
+<hcharexp> ::=  'B' 
+# Inputs = 850
+# Bottlenecks = 46
+P(bottleneck | <hcharexp>,  'B' ) = 0.0541176470588235
+D(bottleneck | <hcharexp>,  'B' ) = 0.00379644791535458
+
+<ldigit> ::=  '1' 
+# Inputs = 887
+# Bottlenecks = 49
+P(bottleneck | <ldigit>,  '1' ) = 0.0552423900789177
+D(bottleneck | <ldigit>,  '1' ) = 0.00205090071721557
+
+<ldigit> ::=  '2'
+# Inputs = 888
+# Bottlenecks = 50
+P(bottleneck | <ldigit>,  '2') = 0.0563063063063063
+D(bottleneck | <ldigit>,  '2') = 0.00311481694460418
+
+<charexp> ::=  <lcharexp> 
+# Inputs = 802
+# Bottlenecks = 46
+P(bottleneck | <charexp>,  <lcharexp> ) = 0.057356608478803
+D(bottleneck | <charexp>,  <lcharexp> ) = 0.00455132795075019
+
+<charexp> ::=  <hcharexp> 
+# Inputs = 785
+# Bottlenecks = 46
+P(bottleneck | <charexp>,  <hcharexp> ) = 0.0585987261146497
+D(bottleneck | <charexp>,  <hcharexp> ) = 0.00579344558659688
+
+<charclassexp> ::=  '[^' <charclasses> ']' 
+# Inputs = 834
+# Bottlenecks = 47
+P(bottleneck | <charclassexp>,  '[^' <charclasses> ']' ) = 0.0563549160671463
+D(bottleneck | <charclassexp>,  '[^' <charclasses> ']' ) = 0.00635491606714628
+
+<charclassexp> ::=  '[' <charclasses> ']' 
+# Inputs = 826
+# Bottlenecks = 45
+P(bottleneck | <charclassexp>,  '[' <charclasses> ']' ) = 0.0544794188861985
+D(bottleneck | <charclassexp>,  '[' <charclasses> ']' ) = 0.00447941888619854
+
+<charclassexp> ::=  <simpleexp>
+# Inputs = 786
+# Bottlenecks = 47
+P(bottleneck | <charclassexp>,  <simpleexp>) = 0.0597964376590331
+D(bottleneck | <charclassexp>,  <simpleexp>) = 0.00979643765903308
+
+<regexp> ::=  <unionexp>
+# Inputs = 1000
+# Bottlenecks = 50
+P(bottleneck | <regexp>,  <unionexp>) = 0.05
+D(bottleneck | <regexp>,  <unionexp>) = 0
+
+<complexp> ::=  '~' <complexp> 
+# Inputs = 889
+# Bottlenecks = 46
+P(bottleneck | <complexp>,  '~' <complexp> ) = 0.0517435320584927
+D(bottleneck | <complexp>,  '~' <complexp> ) = 0.00174353205849269
+
+<complexp> ::=  <charclassexp>
+# Inputs = 1000
+# Bottlenecks = 50
+P(bottleneck | <complexp>,  <charclassexp>) = 0.05
+D(bottleneck | <complexp>,  <charclassexp>) = 0
 
