@@ -1,0 +1,70 @@
+<concatexp>
+# Inputs = 1000
+# Bottlenecks = 57
+P(bottleneck | <concatexp>) = 0.057
+
+<charclasses>
+# Inputs = 887
+# Bottlenecks = 56
+P(bottleneck | <charclasses>) = 0.0631341600901917
+
+<charclassexp>
+# Inputs = 1000
+# Bottlenecks = 57
+P(bottleneck | <charclassexp>) = 0.057
+
+<repeatexp>
+# Inputs = 1000
+# Bottlenecks = 57
+P(bottleneck | <repeatexp>) = 0.057
+
+<charexp>
+# Inputs = 1000
+# Bottlenecks = 57
+P(bottleneck | <charexp>) = 0.057
+
+<ldigit>
+# Inputs = 901
+# Bottlenecks = 57
+P(bottleneck | <ldigit>) = 0.0632630410654828
+
+<charclass>
+# Inputs = 887
+# Bottlenecks = 56
+P(bottleneck | <charclass>) = 0.0631341600901917
+
+<complexp>
+# Inputs = 1000
+# Bottlenecks = 57
+P(bottleneck | <complexp>) = 0.057
+
+<unionexp>
+# Inputs = 1000
+# Bottlenecks = 57
+P(bottleneck | <unionexp>) = 0.057
+
+<simpleexp>
+# Inputs = 683
+# Bottlenecks = 44
+P(bottleneck | <simpleexp>) = 0.0644216691068814
+
+<hdigit>
+# Inputs = 893
+# Bottlenecks = 57
+P(bottleneck | <hdigit>) = 0.0638297872340425
+
+<interexp>
+# Inputs = 1000
+# Bottlenecks = 57
+P(bottleneck | <interexp>) = 0.057
+
+<digit>
+# Inputs = 896
+# Bottlenecks = 57
+P(bottleneck | <digit>) = 0.0636160714285714
+
+<regexp>
+# Inputs = 1000
+# Bottlenecks = 57
+P(bottleneck | <regexp>) = 0.057
+

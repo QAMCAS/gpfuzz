@@ -15,7 +15,13 @@ performance statistics.
 Please download [mutrex.jar][1] first!
 
 ```
-perl GPFuzz.pl 1000 iteqs23/mutrex.bnf regexp "timeout 60 java -jar mutrex.jar" "Exception"
+perl GPFuzz.pl 1000 iteqs23/original/mutrex.bnf regexp "timeout 60 java -jar mutrex.jar" "Exception"
+```
+
+To execute the input generation with problematic construct avoidance:
+
+```
+perl GPFuzz.pl 1000 iteqs23/avoidance/mutrex2.bnf regexp "timeout 60 java -jar mutrex.jar" "Exception"
 ```
 
 ### Copyright Notice
