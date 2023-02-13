@@ -24,6 +24,12 @@ To execute the input generation with problematic construct avoidance:
 perl GPFuzz.pl 1000 iteqs23/avoidance/mutrex2.bnf regexp "timeout 60 java -jar mutrex.jar" "Exception"
 ```
 
+To generate 10 inputs for the toy grammar:
+
+```
+perl GPFuzz.pl 10 iteqs23/toy.bnf e "echo" "NoFail"
+```
+
 ### Copyright Notice
 
 GPFUZZ: Grammar-based Performance Fuzzer
